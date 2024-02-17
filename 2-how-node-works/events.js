@@ -29,11 +29,12 @@ const server = http.createServer();
 
 server.on('request', (req, res) => {
     console.log('Request received!');
+    console.log(req.url);
     res.end('Request received');
 });
 
 server.on('request', (req, res) => {
-    res.end('Another request');
+    console.log('Another request 😀');
 });
 
 server.on('close', () => {
@@ -41,5 +42,5 @@ server.on('close', () => {
 });
 
 server.listen(8000, '127.0.0.1', () => {
-    console.log('Waiting...');
+    console.log('Waiting for requests...');
 });
